@@ -241,8 +241,8 @@ trait UploadField
 
         $target = $this->getDirectory().'/'.$this->name;
 
-        $this->storage->putFile($target, $file);
-
+        $this->storage->put($target, file_get_contents($file->getRealPath()));
+        
         return $target;
     }
 
